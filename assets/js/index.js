@@ -98,6 +98,7 @@ function Car (mark, model, accelerate) {
     
     this.mark = mark;
     this.model = model;
+
     this.isGoing = false; 
     this.speed = null;
     this.accelerate = accelerate; 
@@ -222,6 +223,14 @@ function MyArray() {
     this.pop = function () {
 
         
+        if (this.length > 0) {
+            let delValue = this[this.length - 1];
+            delete this[this.length - 1];
+            return delValue;
+            
+        } else {
+            return "Empty Array"
+        }
 
     };
     
@@ -263,3 +272,4 @@ switch (input) {
 let a = 4;
 const squire = a => a ** 2;
 squire(a);
+
