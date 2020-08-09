@@ -113,4 +113,4 @@ function Car (mark, model, accelerate) {
 
 }
 
-const car1 = new Car ("Skoda", "Octavia", 120);
+const car1 = new Car ("Skoda", "Octavia",, 120);
