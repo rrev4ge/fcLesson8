@@ -103,8 +103,8 @@ function Car (mark, model, accelerate) {
     this.speed = function () {
             if (this.accelerate > 0) {
                 this.speed = this.speed + this.accelerate; 
-                return this.speed
-                }
+                return this.speed;
+                };
            return 0;
     };
     
@@ -112,7 +112,7 @@ function Car (mark, model, accelerate) {
 
         if (this.speed > 0) {
             return "Driving";
-        }
+        };
         return "Parking"; 
     };
 
