@@ -99,10 +99,10 @@ function Car (mark, model, accelerate) {
     
     this.mark = mark;
     this.model = model;
-    this.speed = function (accelerate) {
-            this.speed = this.speed + accelerate; 
+    this.speed = function (this.accelerate) {
+            this.speed = this.speed + this.accelerate; 
     };
-    this.accelerate =accelerate;
+    this.accelerate = accelerate;
     this.status = function () {
 
         if (this.speed > 0) {
@@ -113,4 +113,4 @@ function Car (mark, model, accelerate) {
 
 }
 
-const car1 = new Car ("Skoda", "Octavia",, 120);
+const car1 = new Car ("Skoda", "Octavia", 120);
