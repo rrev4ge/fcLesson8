@@ -92,29 +92,174 @@ function Country (name, population, area,) {
 }
 
 const ua = new Country ("Ukraine", 41806221, 603549);
-/* const jp = new ua("Nippon", 5000000, 23); */
 
 
 function Car (mark, model, accelerate) {
     
     this.mark = mark;
     this.model = model;
-    this.accelerate = accelerate;    
-    this.speed = function () {
-
-            this.speed += this.accelerate;
-            console.log(this.speed);
+    this.isGoing = false; 
+    this.speed = null;
+    this.accelerate = accelerate; 
+    this.status = function (speed) {
+            this.speed = this.accelerate;
+            this.isGoing = speed !== 0;
             return this.speed;
-    
     }
-    this.status = function () {
-
-        if (this.speed > 0) {
-            return "Driving"
-        }
-        return "Parking"; 
-    };
-
+    this.speed = this.status();
 }
 
 const car1 = new Car ("Skoda", "Octavia", 120);
+
+
+
+function Box(size, color, content) {
+
+    this.size = size;
+    this.color = color;
+    this.content = content;
+    this.open = function () {
+
+        return `${this.content} opened`
+        
+    }
+    
+}
+
+function Create(size, material, content) {
+
+    this.size = size;
+    this.material = material;
+    this.content = content;
+}
+
+Create.prototype = new Box();
+
+
+
+function User(isMale, age, name, sayHi) {
+    this.isMale = false;
+    this.age = age;
+    this.name = name;
+    this.sayHi = function () {
+        return `Hi, my name is ${this.name}`
+    }
+    
+}
+
+
+function Employee(age, name, salary) {
+    this.isMale = false;
+    this.age = age;
+    this.name = name;
+    this.salary = salary;
+    
+}
+
+Employee.prototype = new User();
+
+const employee1 = new Employee (33, "Vasya", 1000);
+
+
+
+
+const controlObj = {
+    content: "content",
+    test: "test",
+}
+
+
+const anotherObj = controlObj;
+
+
+
+//Arrays
+
+
+
+function logArrayElements(countryArr) {
+
+    for (let i = 0; i < countryArr.length; i++){
+        console.log(countryArr[i]);
+    }     
+    return countryArr;
+    
+}
+const countryArr = [
+    "Ukraine",
+    "Poland",
+    "GrateBritain",
+    "UnatedStates",
+    "Turkie",
+    "Japan",
+    "China",
+    "Grece",
+    "Canada",
+    "Brasil",
+];
+
+logArrayElements(countryArr);
+
+function MyArray() {
+
+    this.length = 0;
+
+    for (let i = 0; i < arguments.length; i++) {
+        this[this.length] = arguments[i];
+        this.length++;
+        
+    };
+
+    this.push = function () {
+        
+        for (let i = 0; i < arguments.length; i++) {
+            this[this.length] = arguments[i];
+            this.length ++;
+        }
+        return this.length
+    };
+
+    this.pop = function () {
+
+        
+
+    };
+    
+    
+};
+
+
+const myArr = new MyArray("a","s","d","f","g");
+
+
+
+const input = prompt("Chose from menu: 1 - Cake; 2 - Pizza; 3 - Rattatooe");
+
+switch (input) {
+    case 1:
+        {
+            console.log ("sweet tooth");
+        }
+        break;
+    case 2:
+        {
+            console.log ("sweet tooth");
+        }
+        break;
+
+    case 3:
+        {
+            console.log ("It's the best choice");
+        }
+        break;    
+
+    default:
+        {
+            console.log("You choice incorrect");
+        }
+        break;
+}
+
+let a = 4;
+const squire = a => a ** 2;
+squire(a);
