@@ -100,13 +100,17 @@ function Car (mark, model, accelerate) {
     this.mark = mark;
     this.model = model;
     this.speed = function (accelerate) {
-           return this.speed + this.accelerate; 
+            if (accelerate > 0) {
+                this.speed = this.speed + this.accelerate; 
+                return this.speed
+                }
+           return 0;
     };
     this.accelerate = accelerate;
     this.status = function () {
 
         if (this.speed > 0) {
-            return "Driving"
+            return "Driving";
         }
         return "Parking"; 
     };
