@@ -100,13 +100,8 @@ function Car (mark, model, accelerate) {
     this.mark = mark;
     this.model = model;
     this.speed = 0;
-    this.accelerate = function (params) {
-
-        for (let i = 0; i < 180; i++){
-            this.speed = this.speed
-
-        }
-        
+    this.accelerate = function (accelerate) {
+            this.speed = this.speed + accelerate; 
     }
     this.status = function () {
 
